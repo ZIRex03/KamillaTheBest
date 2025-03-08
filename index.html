@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кто не за Камиллу тот лох</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <h1>УФ sex su4ka?</h1>
+
+        <div class="info">
+            <p>Имя: Камилла</p>
+            <p>Возраст: 21</p>
+            <p>Город: Москва</p>
+        </div>
+        <h1 id="accept">Ты самая прекрасная!!!</h1>
+
+        <div class="gallery">
+            <img src="./images/kama-1.jpg" onclick="openFullscreen(this.src)">
+            <img src="./images/kama-2.jpg" onclick="openFullscreen(this.src)">
+            <img src="./images/kama-3.jpg" onclick="openFullscreen(this.src)">
+        </div>
+        <div class="buttons">
+            <button onclick="clickNo()" id="no">Нет</button>
+            <p id="error">Данный ответ не принимается</p>
+            <button onclick="showHeart(this)">Да</button>
+        </div>
+    </div>
+    <div id="fullscreen" class="flsk" onclick="closeFullscreen()">
+    </div>
+    <script>
+        function showHeart(btn) {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            btn.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+            document.getElementById('accept').style.display = 'inherit';
+        }
+        function openFullscreen(src) {
+
+            const fullscreen = document.getElementById("fullscreen");
+            fullscreen.innerHTML = `<img src="${src}">`;
+            fullscreen.classList.add('active');
+        }
+        function closeFullscreen() {
+            document.getElementById("fullscreen").classList.remove('active');
+        }
+
+        function clickNo() {
+            document.getElementById('no').style.display = 'none';
+            document.getElementById('error').style.display = 'inherit';
+        }
+
+        function clickYes() {
+            
+        }
+    </script>
+</body>
+
+</html>
